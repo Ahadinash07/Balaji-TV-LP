@@ -28,7 +28,11 @@ export const Navbar = () => {
             {navLinks.map((link) => (
               <a
                 key={link.href}
-                href={link.href}
+                href={`/${link.href}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.location.href = `/${link.href}`;
+                }}
                 className="text-sm font-medium text-[#374151] hover:text-[#1A0F3C] transition-colors"
               >
                 {link.label}
@@ -76,9 +80,13 @@ export const Navbar = () => {
             {navLinks.map((link) => (
               <a
                 key={link.href}
-                href={link.href}
+                href={`/${link.href}`}
                 className="px-2 py-3 text-base font-medium text-[#374151] hover:text-[#1A0F3C] hover:bg-[#F9FAFB] rounded-lg transition-colors"
-                onClick={() => setIsOpen(false)}
+                onClick={(e) => {
+                  e.preventDefault();
+                  setIsOpen(false);
+                  window.location.href = `/${link.href}`;
+                }}
               >
                 {link.label}
               </a>

@@ -68,26 +68,29 @@ export const LeadForm = () => {
     if (Object.keys(newErrors).length === 0) {
       setIsSubmitting(true);
       try {
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbxT2l8QSQxvCNoD2Fa0bZr4LcZ5kBU5KHLNjhN8Jpo_FaPCNtV1TojsWzXz2xNXIUXsDw/exec';
-        
         const urlEncodedData = new URLSearchParams();
-        urlEncodedData.append("Timestamp", new Date().toLocaleString());
         urlEncodedData.append("Name", formData.name);
         urlEncodedData.append("Phone", formData.phone);
         urlEncodedData.append("Issue", formData.issue);
         urlEncodedData.append("Area", formData.area || "Not Specified");
         urlEncodedData.append("Preference", formData.preference);
+        urlEncodedData.append("_subject", "New Lead - Balaji TV Expert (balajitvexpert.in)");
+        urlEncodedData.append("_captcha", "false"); // Disables captcha for seamless submission
         
-        await fetch(scriptURL, {
-          method: 'POST',
-          body: urlEncodedData.toString(),
+        const response = await fetch("https://formsubmit.co/ajax/balajitvservises@gmail.com", {
+          method: "POST",
           headers: {
-            'Content-Type': 'application/x-www-form-urlencoded'
+            "Content-Type": "application/x-www-form-urlencoded",
+            "Accept": "application/json"
           },
-          mode: 'no-cors' // Required for Google Apps Script Web App
+          body: urlEncodedData.toString(),
         });
         
-        setIsSubmitted(true);
+        if (response.ok) {
+          setIsSubmitted(true);
+        } else {
+          throw new Error("Failed to submit form");
+        }
       } catch (error) {
         console.error("Error submitting form", error);
       } finally {

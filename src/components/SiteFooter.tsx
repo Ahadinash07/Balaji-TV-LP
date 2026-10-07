@@ -123,7 +123,7 @@ export const SiteFooter = () => {
               © 2026 Balaji TV Experts. All rights reserved.
             </p>
             <div className="flex gap-6">
-              <a href="#" className="text-sm text-[#9CA3AF] hover:text-white transition-colors">
+              <a href="/privacy-policy" onClick={(e) => { e.preventDefault(); window.location.href = '/privacy-policy'; }} className="text-sm text-[#9CA3AF] hover:text-white transition-colors">
                 Privacy Policy
               </a>
               <a href="#" className="text-sm text-[#9CA3AF] hover:text-white transition-colors">

@@ -5,6 +5,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://balajitvexpert.in"),
   title: "Balaji TV Repair | Expert TV Repair at Your Doorstep in Hyderabad",
   description: "From no display to motherboard issues, get your TV diagnosed and repaired at home with a 90-day warranty.",
   icons: {
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Balaji TV Repair | Expert TV Repair in Hyderabad",
     description: "From no display to motherboard issues, get your TV diagnosed and repaired at home with a 90-day warranty.",
-    url: "https://balajitvexperts.com",
+    url: "https://balajitvexpert.in",
     siteName: "Balaji TV Experts",
     images: [
       {
