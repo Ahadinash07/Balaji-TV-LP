@@ -8,6 +8,7 @@ import { ProcessSection } from "@/components/ProcessSection";
 import { WhyChooseSection } from "@/components/WhyChooseSection";
 import { BrandGrid } from "@/components/BrandGrid";
 import { TechnicalRepairGrid } from "@/components/TechnicalRepairGrid";
+import { GallerySection } from "@/components/GallerySection";
 import { DoorstepSection } from "@/components/DoorstepSection";
 import { AreasSection } from "@/components/AreasSection";
 import { QuoteCTA } from "@/components/QuoteCTA";
@@ -29,6 +30,7 @@ const Index = () => {
       <WhyChooseSection />
       <BrandGrid />
       <TechnicalRepairGrid />
+      <GallerySection />
       <DoorstepSection />
       <AreasSection />
       <QuoteCTA />

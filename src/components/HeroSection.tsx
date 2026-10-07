@@ -50,13 +50,13 @@ export const HeroSection = () => {
           <div className="relative">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
               <img
-                              src="/hero-image.jpg"
-                              alt="Technician repairing TV in Indian home"
-                              className="w-full h-auto object-cover"
-                              width={600}
-                              height={400}
-                              loading="eager"
-                            />
+                src="/Images/IMG_0825.JPG"
+                alt="Technician repairing TV in Indian home"
+                className="w-full h-auto object-cover"
+                width={600}
+                height={400}
+                loading="eager"
+              />
               {/* Orange geometric accent */}
               <div className="absolute -top-6 -right-6 w-32 h-32 bg-[#FF4A17] rounded-full opacity-10 blur-3xl" />
             </div>

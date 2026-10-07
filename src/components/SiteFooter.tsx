@@ -35,6 +35,11 @@ export const SiteFooter = () => {
                 </a>
               </li>
               <li>
+                <a href="#gallery" className="text-sm text-[#9CA3AF] hover:text-white transition-colors">
+                  Gallery
+                </a>
+              </li>
+              <li>
                 <a href="#areas" className="text-sm text-[#9CA3AF] hover:text-white transition-colors">
                   Service Areas
                 </a>

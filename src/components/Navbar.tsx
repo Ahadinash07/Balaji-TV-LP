@@ -6,6 +6,7 @@ const navLinks = [
   { href: "#problems", label: "TV Problems" },
   { href: "#services", label: "Services" },
   { href: "#brands", label: "Brands" },
+  { href: "#gallery", label: "Gallery" },
   { href: "#areas", label: "Areas" },
   { href: "#faq", label: "FAQ" },
 ];

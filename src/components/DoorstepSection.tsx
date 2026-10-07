@@ -9,7 +9,7 @@ export const DoorstepSection = () => {
           <div className="relative">
             <div className="rounded-2xl overflow-hidden shadow-2xl">
               <img
-                src="/doorstep-image.jpg"
+                src="/Images/IMG_0803.JPG"
                 alt="Technician working in customer home"
                 className="w-full h-auto object-cover"
                 width={600}

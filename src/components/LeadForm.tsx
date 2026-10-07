@@ -25,7 +25,7 @@ export const LeadForm = () => {
   const areas = [
     "Banjara Hills", "Hitech City", "Gachibowli", "Madhapur", "Kondapur",
     "Jubilee Hills", "Kukatpally", "Miyapur", "HITEC City", "Whitefield",
-    "Kondapur", "Manikonda", "Narsingi", "Tellapur", "Gopanpally", "Other"
+    "Whitefield", "Manikonda", "Narsingi", "Tellapur", "Gopanpally", "Other"
   ];
 
   const validateForm = () => {
@@ -59,14 +59,40 @@ export const LeadForm = () => {
     return newErrors;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const newErrors = validateForm();
 
     if (Object.keys(newErrors).length === 0) {
-      // In a real app, this would be an API call
-      console.log("Form submitted:", formData);
-      setIsSubmitted(true);
+      setIsSubmitting(true);
+      try {
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxT2l8QSQxvCNoD2Fa0bZr4LcZ5kBU5KHLNjhN8Jpo_FaPCNtV1TojsWzXz2xNXIUXsDw/exec';
+        
+        const urlEncodedData = new URLSearchParams();
+        urlEncodedData.append("Timestamp", new Date().toLocaleString());
+        urlEncodedData.append("Name", formData.name);
+        urlEncodedData.append("Phone", formData.phone);
+        urlEncodedData.append("Issue", formData.issue);
+        urlEncodedData.append("Area", formData.area || "Not Specified");
+        urlEncodedData.append("Preference", formData.preference);
+        
+        await fetch(scriptURL, {
+          method: 'POST',
+          body: urlEncodedData.toString(),
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+          },
+          mode: 'no-cors' // Required for Google Apps Script Web App
+        });
+        
+        setIsSubmitted(true);
+      } catch (error) {
+        console.error("Error submitting form", error);
+      } finally {
+        setIsSubmitting(false);
+      }
     } else {
       setErrors(newErrors);
     }
@@ -252,9 +278,17 @@ export const LeadForm = () => {
 
       <button
         type="submit"
-        className="w-full py-3 bg-[#FF4A17] text-white font-semibold rounded-lg hover:bg-[#F97316] transition-colors shadow-lg hover:shadow-xl"
+        disabled={isSubmitting}
+        className="w-full py-3 bg-[#FF4A17] text-white font-semibold rounded-lg hover:bg-[#F97316] transition-colors shadow-lg hover:shadow-xl disabled:opacity-70 disabled:cursor-not-allowed flex justify-center items-center gap-2"
       >
-        Submit Enquiry
+        {isSubmitting ? (
+          <>
+            <span className="w-5 h-5 border-2 border-white/20 border-t-white rounded-full animate-spin"></span>
+            Submitting...
+          </>
+        ) : (
+          "Submit Enquiry"
+        )}
       </button>
     </form>
   );
