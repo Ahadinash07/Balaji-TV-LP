@@ -1,18 +1,42 @@
-// Update this page (the content is just a fallback if you fail to update the page)
-
-import { MadeWithDyad } from "@/components/made-with-dyad";
+import { AnnouncementBar } from "@/components/AnnouncementBar";
+import { Navbar } from "@/components/Navbar";
+import { HeroSection } from "@/components/HeroSection";
+import { TrustBar } from "@/components/TrustBar";
+import { ProblemGrid } from "@/components/ProblemGrid";
+import { ServiceGrid } from "@/components/ServiceGrid";
+import { ProcessSection } from "@/components/ProcessSection";
+import { WhyChooseSection } from "@/components/WhyChooseSection";
+import { BrandGrid } from "@/components/BrandGrid";
+import { TechnicalRepairGrid } from "@/components/TechnicalRepairGrid";
+import { DoorstepSection } from "@/components/DoorstepSection";
+import { AreasSection } from "@/components/AreasSection";
+import { QuoteCTA } from "@/components/QuoteCTA";
+import { FAQAccordion } from "@/components/FAQAccordion";
+import { FinalCTA } from "@/components/FinalCTA";
+import { SiteFooter } from "@/components/SiteFooter";
+import { MobileActionBar } from "@/components/MobileActionBar";
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">
-          Start building your amazing project here!
-        </p>
-      </div>
-      <MadeWithDyad />
-    </div>
+    <>
+      <AnnouncementBar />
+      <Navbar />
+      <HeroSection />
+      <TrustBar />
+      <ProblemGrid />
+      <ServiceGrid />
+      <ProcessSection />
+      <WhyChooseSection />
+      <BrandGrid />
+      <TechnicalRepairGrid />
+      <DoorstepSection />
+      <AreasSection />
+      <QuoteCTA />
+      <FAQAccordion />
+      <FinalCTA />
+      <SiteFooter />
+      <MobileActionBar />
+    </>
   );
 };
 
