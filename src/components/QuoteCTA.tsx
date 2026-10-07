@@ -1,4 +1,4 @@
-import { Phone, WhatsApp } from "lucide-react";
+import { MessageCircle, Phone } from "lucide-react";
 
 export const QuoteCTA = () => {
   return (
@@ -65,7 +65,7 @@ export const QuoteCTA = () => {
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 w-full py-3 bg-[#25D366] text-white font-semibold rounded-lg hover:bg-[#1db954] transition-colors"
               >
-                <WhatsApp className="h-5 w-5" />
+                <MessageCircle className="h-5 w-5" />
                 <span>WhatsApp Us</span>
               </a>
             </div>

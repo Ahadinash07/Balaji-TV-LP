@@ -1,4 +1,4 @@
-import { Phone, WhatsApp, MapPin, Clock } from "lucide-react";
+import { Clock, MapPin, MessageCircle, Phone } from "lucide-react";
 
 export const SiteFooter = () => {
   return (
@@ -113,7 +113,7 @@ export const SiteFooter = () => {
                 </a>
               </li>
               <li className="flex items-center gap-2">
-                <WhatsApp className="h-4 w-4 text-[#25D366]" />
+                <MessageCircle className="h-4 w-4 text-[#25D366]" />
                 <a href="https://wa.me/918074372778" target="_blank" rel="noopener noreferrer" className="text-sm text-[#9CA3AF] hover:text-white transition-colors">
                   WhatsApp
                 </a>

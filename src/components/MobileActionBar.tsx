@@ -1,4 +1,4 @@
-import { Phone, WhatsApp } from "lucide-react";
+import { MessageCircle, Phone } from "lucide-react";
 
 export const MobileActionBar = () => {
   return (
@@ -17,7 +17,7 @@ export const MobileActionBar = () => {
           rel="noopener noreferrer"
           className="flex-1 flex items-center justify-center gap-2 py-3 bg-[#25D366] text-white font-semibold"
         >
-          <WhatsApp className="h-5 w-5" />
+          <MessageCircle className="h-5 w-5" />
           <span>WhatsApp</span>
         </a>
       </div>

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Menu, X, Phone, WhatsApp } from "lucide-react";
+import { Menu, X, MessageCircle, Phone } from "lucide-react";
 
 const navLinks = [
   { href: "#problems", label: "TV Problems" },
@@ -69,7 +69,7 @@ export const Navbar = () => {
                 rel="noopener noreferrer"
                 className="flex items-center gap-1.5 px-4 py-2 bg-[#25D366] text-white text-sm font-medium rounded-lg hover:bg-[#1db954] transition-colors"
               >
-                <WhatsApp className="h-4 w-4" />
+                <MessageCircle className="h-4 w-4" />
                 <span>WhatsApp</span>
               </a>
             </div>
@@ -121,7 +121,7 @@ export const Navbar = () => {
                 className="flex items-center gap-2 px-2 py-3 bg-[#25D366] text-white text-base font-medium rounded-lg hover:bg-[#1db954] transition-colors"
                 onClick={() => setIsOpen(false)}
               >
-                <WhatsApp className="h-5 w-5" />
+                <MessageCircle className="h-5 w-5" />
                 <span>WhatsApp Us</span>
               </a>
             </div>

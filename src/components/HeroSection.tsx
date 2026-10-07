@@ -1,4 +1,4 @@
-import { Phone, WhatsApp } from "lucide-react";
+import { MessageCircle, Phone } from "lucide-react";
 
 export const HeroSection = () => {
   return (
@@ -40,7 +40,7 @@ export const HeroSection = () => {
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#25D366] text-white font-semibold rounded-lg hover:bg-[#1db954] transition-all duration-200 shadow-lg hover:shadow-xl"
               >
-                <WhatsApp className="h-5 w-5" />
+                <MessageCircle className="h-5 w-5" />
                 <span>WhatsApp Us</span>
               </a>
             </div>

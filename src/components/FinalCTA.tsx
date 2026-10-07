@@ -1,4 +1,4 @@
-import { Phone, WhatsApp } from "lucide-react";
+import { MessageCircle, Phone } from "lucide-react";
 import { LeadForm } from "./LeadForm";
 
 export const FinalCTA = () => {
@@ -26,7 +26,7 @@ export const FinalCTA = () => {
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#25D366] text-white font-bold text-lg rounded-lg hover:bg-[#1db954] transition-all duration-200 shadow-lg hover:shadow-xl"
           >
-            <WhatsApp className="h-6 w-6" />
+            <MessageCircle className="h-6 w-6" />
             <span>WhatsApp Us</span>
           </a>
         </div>
