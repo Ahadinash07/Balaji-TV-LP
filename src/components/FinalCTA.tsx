@@ -1,0 +1,35 @@
+import { Phone, WhatsApp } from "lucide-react";
+
+export const FinalCTA = () => {
+  return (
+    <section className="py-16 bg-[#1A0F3C] text-white" id="final-cta">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+          TV Not Working? Let's Get It Fixed.
+        </h2>
+        <p className="text-lg text-[#9CA3AF] mb-8 max-w-2xl mx-auto">
+          Call or WhatsApp us now for immediate assistance. Our technicians are ready to help.
+        </p>
+
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="tel:+918074372778"
+            className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#FF4A17] text-white font-bold text-lg rounded-lg hover:bg-[#F97316] transition-all duration-200 shadow-lg hover:shadow-xl"
+          >
+            <Phone className="h-6 w-6" />
+            <span>Call +91 80743 72778</span>
+          </a>
+          <a
+            href="https://wa.me/918074372778"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#25D366] text-white font-bold text-lg rounded-lg hover:bg-[#1db954] transition-all duration-200 shadow-lg hover:shadow-xl"
+          >
+            <WhatsApp className="h-6 w-6" />
+            <span>WhatsApp Us</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+};
