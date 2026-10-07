@@ -13,10 +13,24 @@ export default function PrivacyPolicy() {
           <h1 className="text-3xl sm:text-4xl font-bold text-[#111827] mb-8 border-b pb-4">Privacy Policy</h1>
           
           <div className="space-y-8 text-gray-600 leading-relaxed">
+            
+            <div className="prose prose-gray max-w-none">
+              <p className="font-medium mb-4">Last Updated: 7 October 2026</p>
+              <p className="mb-4">
+                At Balaji TV Experts, we respect your privacy and are committed to protecting the personal information you provide when using our website, contacting us, or requesting TV repair and installation services.
+              </p>
+              <p className="mb-4">
+                This Privacy Policy explains what information we collect, how we use it, how we protect it, and the choices available to you.
+              </p>
+              <p className="mb-8">
+                By using our website balajitvexpert.in, submitting an enquiry form, contacting us by phone or WhatsApp, or requesting our services, you acknowledge that you have read and understood this Privacy Policy.
+              </p>
+            </div>
+
             <section>
               <h2 className="text-xl font-semibold text-gray-900 mb-3">1. Information We Collect</h2>
               <p>
-                At Balaji TV Experts, we collect information that you provide directly to us when you fill out a form, request a quote, or communicate with us. This may include your name, email address, phone number, physical address, and details about your TV repair requirements.
+                We collect information that you provide directly to us when you fill out a form, request a quote, or communicate with us. This may include your name, email address, phone number, physical address, and details about your TV repair requirements.
               </p>
             </section>
 

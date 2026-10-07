@@ -1,3 +1,4 @@
+"use client";
 import { Clock, MapPin, MessageCircle, Phone } from "lucide-react";
 
 export const SiteFooter = () => {
