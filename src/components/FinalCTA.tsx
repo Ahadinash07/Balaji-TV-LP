@@ -1,4 +1,5 @@
 import { Phone, WhatsApp } from "lucide-react";
+import { LeadForm } from "./LeadForm";
 
 export const FinalCTA = () => {
   return (
@@ -8,10 +9,10 @@ export const FinalCTA = () => {
           TV Not Working? Let's Get It Fixed.
         </h2>
         <p className="text-lg text-[#9CA3AF] mb-8 max-w-2xl mx-auto">
-          Call or WhatsApp us now for immediate assistance. Our technicians are ready to help.
+          Call or WhatsApp us now for immediate assistance. Or fill out the form below and we'll get back to you.
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
           <a
             href="tel:+918074372778"
             className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#FF4A17] text-white font-bold text-lg rounded-lg hover:bg-[#F97316] transition-all duration-200 shadow-lg hover:shadow-xl"
@@ -28,6 +29,16 @@ export const FinalCTA = () => {
             <WhatsApp className="h-6 w-6" />
             <span>WhatsApp Us</span>
           </a>
+        </div>
+
+        <div className="max-w-2xl mx-auto bg-white text-[#111827] rounded-2xl p-8 shadow-xl">
+          <h3 className="text-2xl font-bold mb-2">
+            Or Submit an Enquiry
+          </h3>
+          <p className="text-[#6B7280] mb-6">
+            Fill out the form and we'll contact you shortly.
+          </p>
+          <LeadForm />
         </div>
       </div>
     </section>

@@ -1,4 +1,4 @@
-import { Wrench, Cpu, Power, Monitor, Settings, Shield, Zap, Home } from "lucide-react";
+import { Wrench, Cpu, Power, Monitor, Settings, Shield, Zap, Home, ChevronRight } from "lucide-react";
 
 const services = [
   {

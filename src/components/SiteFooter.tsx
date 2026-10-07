@@ -154,6 +154,6 @@ export const SiteFooter = () => {
           </div>
         </div>
       </div>
-    </section>
+    </footer>
   );
 };
