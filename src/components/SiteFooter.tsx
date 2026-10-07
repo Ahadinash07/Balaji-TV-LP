@@ -8,30 +8,7 @@ export const SiteFooter = () => {
           {/* Column 1 - About */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <svg
-                className="h-8 w-8 text-[#FF4A17]"
-                viewBox="0 0 32 32"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                aria-hidden="true"
-              >
-                <rect width="32" height="32" rx="6" fill="#1A0F3C" />
-                <path
-                  d="M8 10h16v12H8z"
-                  stroke="#FF4A17"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M16 22v4"
-                  stroke="#FF4A17"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                />
-                <circle cx="16" cy="16" r="3" fill="#FF4A17" />
-              </svg>
-              <span className="font-bold text-xl">Balaji TV Experts</span>
+              <img src="/Logo.png" alt="Balaji TV Experts" className="h-8 w-auto" />
             </div>
             <p className="text-sm text-[#9CA3AF] mb-4">
               Independent TV repair service in Hyderabad. Component-level repairs with 90-day warranty.
@@ -138,7 +115,7 @@ export const SiteFooter = () => {
         <div className="border-t border-[#374151] pt-6">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
             <p className="text-sm text-[#9CA3AF]">
-              © 2024 Balaji TV Experts. All rights reserved.
+              © 2026 Balaji TV Experts. All rights reserved.
             </p>
             <div className="flex gap-6">
               <a href="#" className="text-sm text-[#9CA3AF] hover:text-white transition-colors">

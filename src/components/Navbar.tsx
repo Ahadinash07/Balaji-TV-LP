@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 import { Menu, X, MessageCircle, Phone } from "lucide-react";
 
@@ -18,30 +19,7 @@ export const Navbar = () => {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <div className="flex items-center gap-2">
-            <svg
-              className="h-8 w-8 text-[#1A0F3C]"
-              viewBox="0 0 32 32"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              aria-hidden="true"
-            >
-              <rect width="32" height="32" rx="6" fill="#1A0F3C" />
-              <path
-                d="M8 10h16v12H8z"
-                stroke="#FF4A17"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M16 22v4"
-                stroke="#FF4A17"
-                strokeWidth="2"
-                strokeLinecap="round"
-              />
-              <circle cx="16" cy="16" r="3" fill="#FF4A17" />
-            </svg>
-            <span className="font-bold text-xl text-[#1A0F3C]">Balaji TV Experts</span>
+            <img src="/Logo.png" alt="Balaji TV Experts" className="h-8 w-auto" />
           </div>
 
           {/* Desktop Navigation */}
@@ -90,9 +68,8 @@ export const Navbar = () => {
         {/* Mobile Menu */}
         <div
           id="mobile-menu"
-          className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-            isOpen ? "max-h-96 opacity-100 pb-4" : "max-h-0 opacity-0"
-          }`}
+          className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? "max-h-96 opacity-100 pb-4" : "max-h-0 opacity-0"
+            }`}
         >
           <div className="flex flex-col gap-2 pt-2 border-t border-[#E5E7EB]">
             {navLinks.map((link) => (
