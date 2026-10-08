@@ -131,8 +131,8 @@ export const LeadForm = () => {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
-      {/* Honeypot field - visually hidden */}
-      <div className="hidden">
+      {/* Honeypot field - invisible to humans but visible to bots */}
+      <div className="opacity-0 absolute -z-10" aria-hidden="true">
         <label htmlFor="company_website">Website</label>
         <input
           type="text"

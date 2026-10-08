@@ -42,7 +42,7 @@ export const WhyChooseSection = () => {
           <div className="relative order-2 lg:order-1">
             <div className="rounded-2xl overflow-hidden shadow-2xl">
               <img
-                src="/Images/IMG_0842.JPG"
+                src="/Balaji-Images/Focused Electronics Repair Technician.png"
                 alt="Technician diagnosing TV issue"
                 className="w-full h-auto object-cover"
                 width={600}

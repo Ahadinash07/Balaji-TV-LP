@@ -1,14 +1,14 @@
 import React from 'react';
 
 const images = [
-  '/Images/IMG_0797.JPG',
-  '/Images/IMG_0802.JPG',
-  '/Images/IMG_0803.JPG',
-  '/Images/IMG_0804.JPG',
-  '/Images/IMG_0806.JPG',
-  '/Images/IMG_0815.JPG',
-  '/Images/IMG_0816.JPG',
-  '/Images/IMG_0825.JPG'
+  '/Balaji-Images/Balaji TV Repair Workshop Interior.png',
+  '/Balaji-Images/Balaji TV Repair Workshop.png',
+  '/Balaji-Images/Balaji TV Services Storefront.png',
+  '/Balaji-Images/Disassembled TV Electronics Repair Bench.png',
+  '/Balaji-Images/Flat-Screen TV Repair Workshop.png',
+  '/Balaji-Images/Focused Electronics Repair Technician.png',
+  '/Balaji-Images/Hands-On TV Circuit Board Repair.png',
+  '/Balaji-Images/Mint Workshop Circuit Shelf.png'
 ];
 
 export const GallerySection = () => {
