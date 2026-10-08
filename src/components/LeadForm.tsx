@@ -23,9 +23,9 @@ export const LeadForm = () => {
   ];
 
   const areas = [
-    "Banjara Hills", "Hitech City", "Gachibowli", "Madhapur", "Kondapur",
-    "Jubilee Hills", "Kukatpally", "Miyapur", "HITEC City", "Whitefield",
-    "Whitefield", "Manikonda", "Narsingi", "Tellapur", "Gopanpally", "Other"
+    "Kothapet", "Dilsukhnagar", "Uppal", "Nagole", "Amberpet",
+    "Habsiguda", "Kukatpally", "Ameerpet", "Miyapur", "Gachibowli",
+    "Madhapur", "Hitech City", "Banjara Hills", "Jubilee Hills", "Begumpet"
   ];
 
   const validateForm = () => {
@@ -131,8 +131,8 @@ export const LeadForm = () => {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
-      {/* Honeypot field - visually hidden */}
-      <div className="hidden">
+      {/* Honeypot field - invisible to humans but visible to bots */}
+      <div className="opacity-0 absolute -z-10" aria-hidden="true">
         <label htmlFor="company_website">Website</label>
         <input
           type="text"
