@@ -55,7 +55,7 @@ export const HeroSection = () => {
           <div className="relative">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
               <img
-                src="/Balaji-Images/Balaji TV Repair Workshop Interior.png"
+                src="/Balaji-Images/Balaji TV Repair Workshop.png"
                 alt="Technician repairing TV in Indian home"
                 className="w-full h-auto object-cover"
                 width={600}
