@@ -25,7 +25,7 @@ export const LeadForm = () => {
   const areas = [
     "Banjara Hills", "Hitech City", "Gachibowli", "Madhapur", "Kondapur",
     "Jubilee Hills", "Kukatpally", "Miyapur", "HITEC City", "Whitefield",
-    "Whitefield", "Manikonda", "Narsingi", "Tellapur", "Gopanpally", "Other"
+    "Manikonda", "Narsingi", "Tellapur", "Gopanpally", "Other"
   ];
 
   const validateForm = () => {
