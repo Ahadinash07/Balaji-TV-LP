@@ -1,4 +1,6 @@
+"use client";
 import { MessageCircle, Phone } from "lucide-react";
+import { trackPhoneClick, trackWhatsAppClick } from "@/lib/gtm";
 
 export const MobileActionBar = () => {
   return (
@@ -7,6 +9,7 @@ export const MobileActionBar = () => {
         <a
           href="tel:+918074372778"
           className="flex-1 flex items-center justify-center gap-2 py-3 bg-[#FF4A17] text-white font-semibold"
+          onClick={() => trackPhoneClick("mobile_action_bar")}
         >
           <Phone className="h-5 w-5" />
           <span>Call</span>
@@ -16,6 +19,7 @@ export const MobileActionBar = () => {
           target="_blank"
           rel="noopener noreferrer"
           className="flex-1 flex items-center justify-center gap-2 py-3 bg-[#25D366] text-white font-semibold"
+          onClick={() => trackWhatsAppClick("mobile_action_bar")}
         >
           <MessageCircle className="h-5 w-5" />
           <span>WhatsApp</span>

@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { Menu, X, MessageCircle, Phone } from "lucide-react";
+import { trackPhoneClick, trackWhatsAppClick } from "@/lib/gtm";
 
 const navLinks = [
   { href: "#problems", label: "TV Problems" },
@@ -42,6 +43,7 @@ export const Navbar = () => {
               <a
                 href="tel:+918074372778"
                 className="flex items-center gap-1.5 text-sm font-medium text-[#1A0F3C] hover:text-[#FF4A17] transition-colors"
+                onClick={() => trackPhoneClick("navbar_desktop")}
               >
                 <Phone className="h-4 w-4" />
                 <span>Call</span>
@@ -51,6 +53,7 @@ export const Navbar = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-1.5 px-4 py-2 bg-[#25D366] text-white text-sm font-medium rounded-lg hover:bg-[#1db954] transition-colors"
+                onClick={() => trackWhatsAppClick("navbar_desktop")}
               >
                 <MessageCircle className="h-4 w-4" />
                 <span>WhatsApp</span>
@@ -95,7 +98,10 @@ export const Navbar = () => {
               <a
                 href="tel:+918074372778"
                 className="flex items-center gap-2 px-2 py-3 text-base font-medium text-[#1A0F3C] hover:bg-[#F9FAFB] rounded-lg transition-colors"
-                onClick={() => setIsOpen(false)}
+                onClick={() => {
+                  setIsOpen(false);
+                  trackPhoneClick("navbar_mobile");
+                }}
               >
                 <Phone className="h-5 w-5" />
                 <span>Call: +91 80743 72778</span>
@@ -105,7 +111,10 @@ export const Navbar = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 px-2 py-3 bg-[#25D366] text-white text-base font-medium rounded-lg hover:bg-[#1db954] transition-colors"
-                onClick={() => setIsOpen(false)}
+                onClick={() => {
+                  setIsOpen(false);
+                  trackWhatsAppClick("navbar_mobile");
+                }}
               >
                 <MessageCircle className="h-5 w-5" />
                 <span>WhatsApp Us</span>

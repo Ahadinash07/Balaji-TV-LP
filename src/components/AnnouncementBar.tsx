@@ -1,4 +1,7 @@
+"use client";
+
 import { MessageCircle, Phone } from "lucide-react";
+import { trackPhoneClick, trackWhatsAppClick } from "@/lib/gtm";
 
 export const AnnouncementBar = () => {
   return (
@@ -9,7 +12,13 @@ export const AnnouncementBar = () => {
       </div>
       <div className="flex items-center gap-2">
         <MessageCircle className="h-4 w-4 text-[#25D366]" />
-        <span>+91 80743 72778</span>
+        <a
+          href="tel:+918074372778"
+          onClick={() => trackPhoneClick("announcement_bar")}
+          className="hover:underline"
+        >
+          +91 80743 72778
+        </a>
       </div>
     </div>
   );

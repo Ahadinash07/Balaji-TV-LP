@@ -1,4 +1,7 @@
+"use client";
+
 import { MessageCircle, Phone } from "lucide-react";
+import { trackPhoneClick, trackWhatsAppClick } from "@/lib/gtm";
 
 export const QuoteCTA = () => {
   return (
@@ -55,6 +58,7 @@ export const QuoteCTA = () => {
               <a
                 href="tel:+918074372778"
                 className="flex items-center justify-center gap-2 w-full py-3 bg-[#FF4A17] text-white font-semibold rounded-lg hover:bg-[#F97316] transition-colors"
+                onClick={() => trackPhoneClick("quote_cta")}
               >
                 <Phone className="h-5 w-5" />
                 <span>Call: +91 80743 72778</span>
@@ -64,6 +68,7 @@ export const QuoteCTA = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 w-full py-3 bg-[#25D366] text-white font-semibold rounded-lg hover:bg-[#1db954] transition-colors"
+                onClick={() => trackWhatsAppClick("quote_cta")}
               >
                 <MessageCircle className="h-5 w-5" />
                 <span>WhatsApp Us</span>

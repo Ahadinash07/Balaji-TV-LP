@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
+import { trackFAQOpen } from "@/lib/gtm";
 
 const faqs = [
   {
@@ -41,7 +42,11 @@ export const FAQAccordion = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggleFAQ = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index);
+    const newIndex = openIndex === index ? null : index;
+    setOpenIndex(newIndex);
+    if (newIndex !== null) {
+      trackFAQOpen(faqs[index].question);
+    }
   };
 
   return (

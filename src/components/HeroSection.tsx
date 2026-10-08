@@ -1,4 +1,7 @@
+"use client";
+
 import { MessageCircle, Phone } from "lucide-react";
+import { trackPhoneClick, trackWhatsAppClick } from "@/lib/gtm";
 
 export const HeroSection = () => {
   return (
@@ -30,6 +33,7 @@ export const HeroSection = () => {
               <a
                 href="tel:+918074372778"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#FF4A17] text-white font-semibold rounded-lg hover:bg-[#F97316] transition-all duration-200 shadow-lg hover:shadow-xl"
+                onClick={() => trackPhoneClick("hero_section")}
               >
                 <Phone className="h-5 w-5" />
                 <span>Call Now: +91 80743 72778</span>
@@ -39,6 +43,7 @@ export const HeroSection = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#25D366] text-white font-semibold rounded-lg hover:bg-[#1db954] transition-all duration-200 shadow-lg hover:shadow-xl"
+                onClick={() => trackWhatsAppClick("hero_section")}
               >
                 <MessageCircle className="h-5 w-5" />
                 <span>WhatsApp Us</span>

@@ -1,6 +1,7 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { CheckCircle } from "lucide-react";
+import { trackFormStart, trackFormSubmit } from "@/lib/gtm";
 
 export const LeadForm = () => {
   const [formData, setFormData] = useState({
@@ -28,6 +29,11 @@ export const LeadForm = () => {
     "Manikonda", "Narsingi", "Tellapur", "Gopanpally", "Other"
   ];
 
+  // Track form start when component mounts
+  useEffect(() => {
+    trackFormStart("lead_form");
+  }, []);
+
   const validateForm = () => {
     const newErrors: Record<string, string> = {};
 
@@ -39,8 +45,12 @@ export const LeadForm = () => {
 
     if (!formData.phone.trim()) {
       newErrors.phone = "Phone number is required";
-    } else if (!/^[6-9]\d{9}$/.test(formData.phone.replace(/\s/g, ""))) {
-      newErrors.phone = "Please enter a valid 10-digit Indian mobile number";
+    } else {
+      // Remove all spaces and check if it's exactly 10 digits starting with 6-9
+      const cleanPhone = formData.phone.replace(/\s/g, "");
+      if (!/^[6-9]\d{9}$/.test(cleanPhone)) {
+        newErrors.phone = "Please enter a valid 10-digit Indian mobile number";
+      }
     }
 
     if (!formData.issue) {
@@ -88,6 +98,12 @@ export const LeadForm = () => {
         
         if (response.ok) {
           setIsSubmitted(true);
+          // Track form submission
+          trackFormSubmit({
+            issue: formData.issue,
+            area: formData.area || "Not Specified",
+            formId: "lead_form"
+          });
         } else {
           throw new Error("Failed to submit form");
         }
@@ -177,8 +193,10 @@ export const LeadForm = () => {
             value={formData.phone}
             onChange={handleChange}
             className="w-full px-4 py-2 border border-[#E5E7EB] rounded-lg focus:ring-2 focus:ring-[#FF4A17] focus:border-transparent outline-none transition-colors"
-            placeholder="10-digit mobile number"
+            placeholder="10-digit mobile number (e.g., 9876543210)"
+            maxLength={10}
             pattern="[6-9]\d{9}"
+            title="Please enter exactly 10 digits, starting with 6, 7, 8, or 9"
           />
           {errors.phone && (
             <p className="text-sm text-[#FF4A17] mt-1">{errors.phone}</p>

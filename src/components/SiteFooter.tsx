@@ -1,5 +1,6 @@
 "use client";
 import { Clock, MapPin, MessageCircle, Phone } from "lucide-react";
+import { trackPhoneClick, trackWhatsAppClick } from "@/lib/gtm";
 
 export const SiteFooter = () => {
   return (
@@ -91,13 +92,13 @@ export const SiteFooter = () => {
             <ul className="space-y-3">
               <li className="flex items-center gap-2">
                 <Phone className="h-4 w-4 text-[#FF4A17]" />
-                <a href="tel:+918074372778" className="text-sm text-[#9CA3AF] hover:text-white transition-colors">
+                <a href="tel:+918074372778" className="text-sm text-[#9CA3AF] hover:text-white transition-colors" onClick={() => trackPhoneClick("footer_contact")}>
                   +91 80743 72778
                 </a>
               </li>
               <li className="flex items-center gap-2">
                 <MessageCircle className="h-4 w-4 text-[#25D366]" />
-                <a href="https://wa.me/918074372778" target="_blank" rel="noopener noreferrer" className="text-sm text-[#9CA3AF] hover:text-white transition-colors">
+                <a href="https://wa.me/918074372778" target="_blank" rel="noopener noreferrer" className="text-sm text-[#9CA3AF] hover:text-white transition-colors" onClick={() => trackWhatsAppClick("footer_contact")}>
                   WhatsApp
                 </a>
               </li>
@@ -126,9 +127,6 @@ export const SiteFooter = () => {
             <div className="flex gap-6">
               <a href="/privacy-policy" onClick={(e) => { e.preventDefault(); window.location.href = '/privacy-policy'; }} className="text-sm text-[#9CA3AF] hover:text-white transition-colors">
                 Privacy Policy
-              </a>
-              <a href="#" className="text-sm text-[#9CA3AF] hover:text-white transition-colors">
-                Warranty Policy
               </a>
             </div>
           </div>

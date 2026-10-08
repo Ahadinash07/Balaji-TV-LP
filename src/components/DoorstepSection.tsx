@@ -1,4 +1,7 @@
+"use client";
+
 import { MapPin, Clock, Phone } from "lucide-react";
+import { trackPhoneClick } from "@/lib/gtm";
 
 export const DoorstepSection = () => {
   return (
@@ -54,7 +57,10 @@ export const DoorstepSection = () => {
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <Phone className="h-5 w-5 text-[#FF4A17] mt-0.5 flex-shrink-0" />
+                <Phone
+                  className="h-5 w-5 text-[#FF4A17] mt-0.5 flex-shrink-0 cursor-pointer"
+                  onClick={() => trackPhoneClick("doorstep_section")}
+                />
                 <div>
                   <h3 className="font-semibold text-[#111827]">Transparent Pricing</h3>
                   <p className="text-sm text-[#6B7280]">

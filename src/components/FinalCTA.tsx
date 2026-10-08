@@ -1,5 +1,8 @@
+"use client";
+
 import { MessageCircle, Phone } from "lucide-react";
 import { LeadForm } from "./LeadForm";
+import { trackPhoneClick, trackWhatsAppClick } from "@/lib/gtm";
 
 export const FinalCTA = () => {
   return (
@@ -16,6 +19,7 @@ export const FinalCTA = () => {
           <a
             href="tel:+918074372778"
             className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#FF4A17] text-white font-bold text-lg rounded-lg hover:bg-[#F97316] transition-all duration-200 shadow-lg hover:shadow-xl"
+            onClick={() => trackPhoneClick("final_cta")}
           >
             <Phone className="h-6 w-6" />
             <span>Call +91 80743 72778</span>
@@ -25,6 +29,7 @@ export const FinalCTA = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#25D366] text-white font-bold text-lg rounded-lg hover:bg-[#1db954] transition-all duration-200 shadow-lg hover:shadow-xl"
+            onClick={() => trackWhatsAppClick("final_cta")}
           >
             <MessageCircle className="h-6 w-6" />
             <span>WhatsApp Us</span>
