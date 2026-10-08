@@ -128,9 +128,6 @@ export const SiteFooter = () => {
                 Privacy Policy
               </a>
               <a href="#" className="text-sm text-[#9CA3AF] hover:text-white transition-colors">
-                Terms of Service
-              </a>
-              <a href="#" className="text-sm text-[#9CA3AF] hover:text-white transition-colors">
                 Warranty Policy
               </a>
             </div>
