@@ -34,7 +34,7 @@ const faqs = [
   },
   {
     question: "How do I book a service?",
-    answer: "You can book by calling us at +91 80743 72778 or sending a WhatsApp message. Our team will confirm the appointment and technician visit time.",
+    answer: "You can book by calling us at +91 9959152818 or sending a WhatsApp message. Our team will confirm the appointment and technician visit time.",
   },
 ];
 
@@ -76,15 +76,13 @@ export const FAQAccordion = () => {
                   {faq.question}
                 </span>
                 <ChevronDown
-                  className={`h-5 w-5 text-[#6B7280] flex-shrink-0 transition-transform duration-200 ${
-                    openIndex === index ? "rotate-180" : ""
-                  }`}
+                  className={`h-5 w-5 text-[#6B7280] flex-shrink-0 transition-transform duration-200 ${openIndex === index ? "rotate-180" : ""
+                    }`}
                 />
               </button>
               <div
-                className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                  openIndex === index ? "max-h-96" : "max-h-0"
-                }`}
+                className={`overflow-hidden transition-all duration-300 ease-in-out ${openIndex === index ? "max-h-96" : "max-h-0"
+                  }`}
               >
                 <p className="p-5 pt-0 text-[#374151] leading-relaxed">
                   {faq.answer}

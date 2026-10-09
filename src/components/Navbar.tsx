@@ -16,7 +16,7 @@ export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-[#E5E7EB]">
+    <header className="sticky top-0 z-50 bg-white border-b border-[#E5E7EB]">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Main navigation">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
@@ -41,7 +41,7 @@ export const Navbar = () => {
             ))}
             <div className="flex items-center gap-3 ml-4 border-l border-[#E5E7EB] pl-4">
               <a
-                href="tel:+918074372778"
+                href="tel:+919959152818"
                 className="flex items-center gap-1.5 text-sm font-medium text-[#1A0F3C] hover:text-[#FF4A17] transition-colors"
                 onClick={() => trackPhoneClick("navbar_desktop")}
               >
@@ -49,7 +49,7 @@ export const Navbar = () => {
                 <span>Call</span>
               </a>
               <a
-                href="https://wa.me/918074372778"
+                href="https://wa.me/919959152818"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-1.5 px-4 py-2 bg-[#25D366] text-white text-sm font-medium rounded-lg hover:bg-[#1db954] transition-colors"
@@ -76,10 +76,10 @@ export const Navbar = () => {
         {/* Mobile Menu */}
         <div
           id="mobile-menu"
-          className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? "max-h-96 opacity-100 pb-4" : "max-h-0 opacity-0"
+          className={`md:hidden absolute top-[100%] left-0 w-full bg-white shadow-xl overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? "max-h-96 opacity-100 border-b border-[#E5E7EB]" : "max-h-0 opacity-0"
             }`}
         >
-          <div className="flex flex-col gap-2 pt-2 border-t border-[#E5E7EB]">
+          <div className="flex flex-col gap-1 px-4 py-4">
             {navLinks.map((link) => (
               <a
                 key={link.href}
@@ -94,32 +94,7 @@ export const Navbar = () => {
                 {link.label}
               </a>
             ))}
-            <div className="flex flex-col gap-2 pt-2 border-t border-[#E5E7EB]">
-              <a
-                href="tel:+918074372778"
-                className="flex items-center gap-2 px-2 py-3 text-base font-medium text-[#1A0F3C] hover:bg-[#F9FAFB] rounded-lg transition-colors"
-                onClick={() => {
-                  setIsOpen(false);
-                  trackPhoneClick("navbar_mobile");
-                }}
-              >
-                <Phone className="h-5 w-5" />
-                <span>Call: +91 80743 72778</span>
-              </a>
-              <a
-                href="https://wa.me/918074372778"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 px-2 py-3 bg-[#25D366] text-white text-base font-medium rounded-lg hover:bg-[#1db954] transition-colors"
-                onClick={() => {
-                  setIsOpen(false);
-                  trackWhatsAppClick("navbar_mobile");
-                }}
-              >
-                <MessageCircle className="h-5 w-5" />
-                <span>WhatsApp Us</span>
-              </a>
-            </div>
+
           </div>
         </div>
       </nav>

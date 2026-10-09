@@ -35,7 +35,7 @@ const reasons = [
 
 export const WhyChooseSection = () => {
   return (
-    <section className="py-16 bg-[#1A0F3C] text-white" id="why-choose">
+    <section className="py-16 bg-[#1A0F3C] text-white overflow-hidden" id="why-choose">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Image */}

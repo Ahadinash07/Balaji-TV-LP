@@ -5,7 +5,7 @@ import { trackPhoneClick, trackWhatsAppClick } from "@/lib/gtm";
 
 export const HeroSection = () => {
   return (
-    <section className="py-12 sm:py-16 lg:py-20 bg-white" id="hero">
+    <section className="py-12 sm:py-16 lg:py-20 bg-white overflow-hidden" id="hero">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left Column - Copy */}
@@ -31,15 +31,15 @@ export const HeroSection = () => {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-3 pt-4">
               <a
-                href="tel:+918074372778"
+                href="tel:+919959152818"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#FF4A17] text-white font-semibold rounded-lg hover:bg-[#F97316] transition-all duration-200 shadow-lg hover:shadow-xl"
                 onClick={() => trackPhoneClick("hero_section")}
               >
                 <Phone className="h-5 w-5" />
-                <span>Call Now: +91 80743 72778</span>
+                <span>Call Now</span>
               </a>
               <a
-                href="https://wa.me/918074372778"
+                href="https://wa.me/919959152818"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#25D366] text-white font-semibold rounded-lg hover:bg-[#1db954] transition-all duration-200 shadow-lg hover:shadow-xl"

@@ -17,15 +17,15 @@ export const FinalCTA = () => {
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
           <a
-            href="tel:+918074372778"
+            href="tel:+919959152818"
             className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#FF4A17] text-white font-bold text-lg rounded-lg hover:bg-[#F97316] transition-all duration-200 shadow-lg hover:shadow-xl"
             onClick={() => trackPhoneClick("final_cta")}
           >
             <Phone className="h-6 w-6" />
-            <span>Call +91 80743 72778</span>
+            <span>Call Now</span>
           </a>
           <a
-            href="https://wa.me/918074372778"
+            href="https://wa.me/919959152818"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#25D366] text-white font-bold text-lg rounded-lg hover:bg-[#1db954] transition-all duration-200 shadow-lg hover:shadow-xl"

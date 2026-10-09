@@ -1,5 +1,5 @@
 "use client";
-import { Clock, MapPin, MessageCircle, Phone } from "lucide-react";
+import { Clock, MapPin, MessageCircle, Phone, Facebook, Instagram } from "lucide-react";
 import { trackPhoneClick, trackWhatsAppClick } from "@/lib/gtm";
 
 export const SiteFooter = () => {
@@ -86,20 +86,32 @@ export const SiteFooter = () => {
             </ul>
           </div>
 
-          {/* Column 4 - Contact */}
+          {/* Column 4 - Contact & Social */}
           <div>
-            <h3 className="font-semibold text-white mb-4">Contact Us</h3>
+            <h3 className="font-semibold text-white mb-4">Contact & Follow Us</h3>
             <ul className="space-y-3">
               <li className="flex items-center gap-2">
                 <Phone className="h-4 w-4 text-[#FF4A17]" />
-                <a href="tel:+918074372778" className="text-sm text-[#9CA3AF] hover:text-white transition-colors" onClick={() => trackPhoneClick("footer_contact")}>
-                  +91 80743 72778
+                <a href="tel:+919959152818" className="text-sm text-[#9CA3AF] hover:text-white transition-colors" onClick={() => trackPhoneClick("footer_contact")}>
+                  +91 9959152818
                 </a>
               </li>
               <li className="flex items-center gap-2">
                 <MessageCircle className="h-4 w-4 text-[#25D366]" />
-                <a href="https://wa.me/918074372778" target="_blank" rel="noopener noreferrer" className="text-sm text-[#9CA3AF] hover:text-white transition-colors" onClick={() => trackWhatsAppClick("footer_contact")}>
+                <a href="https://wa.me/919959152818" target="_blank" rel="noopener noreferrer" className="text-sm text-[#9CA3AF] hover:text-white transition-colors" onClick={() => trackWhatsAppClick("footer_contact")}>
                   WhatsApp
+                </a>
+              </li>
+              <li className="flex items-center gap-2">
+                <Instagram className="h-4 w-4 text-[#E1306C]" />
+                <a href="https://www.instagram.com/balaji_tv_services/" target="_blank" rel="noopener noreferrer" className="text-sm text-[#9CA3AF] hover:text-white transition-colors">
+                  Instagram
+                </a>
+              </li>
+              <li className="flex items-center gap-2">
+                <Facebook className="h-4 w-4 text-[#1877F2]" />
+                <a href="https://www.facebook.com/share/1GVayfLymZ/" target="_blank" rel="noopener noreferrer" className="text-sm text-[#9CA3AF] hover:text-white transition-colors">
+                  Facebook
                 </a>
               </li>
               <li className="flex items-center gap-2">

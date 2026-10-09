@@ -7,13 +7,13 @@ export default function PrivacyPolicy() {
     <>
       <AnnouncementBar />
       <Navbar />
-      
+
       <main className="min-h-screen bg-gray-50 py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 bg-white p-8 sm:p-12 rounded-2xl shadow-sm border border-gray-100">
           <h1 className="text-3xl sm:text-4xl font-bold text-[#111827] mb-8 border-b pb-4">Privacy Policy</h1>
-          
+
           <div className="space-y-8 text-gray-600 leading-relaxed">
-            
+
             <div className="prose prose-gray max-w-none">
               <p className="font-medium mb-4">Last Updated: 7 October 2026</p>
               <p className="mb-4">
@@ -62,8 +62,8 @@ export default function PrivacyPolicy() {
             <section>
               <h2 className="text-xl font-semibold text-gray-900 mb-3">5. Contact Us</h2>
               <p>
-                If you have any questions about this Privacy Policy, please contact us at:<br/>
-                <strong>Phone:</strong> +91 80743 72778<br/>
+                If you have any questions about this Privacy Policy, please contact us at:<br />
+                <strong>Phone:</strong> +91 9959152818<br />
                 <strong>Email:</strong> balajitvservises@gmail.com
               </p>
             </section>
