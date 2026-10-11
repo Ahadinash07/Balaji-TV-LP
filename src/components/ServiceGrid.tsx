@@ -101,7 +101,7 @@ export const ServiceGrid = () => {
                   {service.description}
                 </p>
                 <a
-                  href="#quote"
+                  href="/services"
                   className="mt-4 inline-flex items-center text-sm font-medium text-[#FF4A17] hover:text-[#F97316] transition-colors"
                 >
                   Get Quote

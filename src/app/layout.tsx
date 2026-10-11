@@ -6,7 +6,7 @@ import { Metadata } from "next";
 import Script from "next/script";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://balajitvexpert.in"),
+  metadataBase: new URL("https://www.balajitvexpert.online"),
   title: "Balaji TV Repair | Expert TV Repair at Your Doorstep in Hyderabad",
   description: "From no display to motherboard issues, get your TV diagnosed and repaired at home with a 90-day warranty.",
   icons: {
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Balaji TV Repair | Expert TV Repair in Hyderabad",
     description: "From no display to motherboard issues, get your TV diagnosed and repaired at home with a 90-day warranty.",
-    url: "https://balajitvexpert.in",
+    url: "https://www.balajitvexpert.online",
     siteName: "Balaji TV Experts",
     images: [
       {
@@ -44,6 +44,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <head>
+        {/* Google Tag Manager */}
         <Script id="google-tag-manager" strategy="afterInteractive">
           {`
             (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

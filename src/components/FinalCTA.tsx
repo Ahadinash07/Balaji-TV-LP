@@ -17,7 +17,7 @@ export const FinalCTA = () => {
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
           <a
-            href="tel:+919959152818"
+            href="/call"
             className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#FF4A17] text-white font-bold text-lg rounded-lg hover:bg-[#F97316] transition-all duration-200 shadow-lg hover:shadow-xl"
             onClick={() => trackPhoneClick("final_cta")}
           >

@@ -21,7 +21,7 @@ export const AnnouncementBar = () => {
       <div className="flex items-center gap-2">
         <MessageCircle className="h-4 w-4 text-[#25D366]" />
         <a
-          href="tel:+919959152818"
+          href="/call"
           onClick={() => trackPhoneClick("announcement_bar")}
           className="hover:underline"
         >

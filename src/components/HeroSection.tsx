@@ -31,7 +31,7 @@ export const HeroSection = () => {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-3 pt-4">
               <a
-                href="tel:+919959152818"
+                href="/call"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#FF4A17] text-white font-semibold rounded-lg hover:bg-[#F97316] transition-all duration-200 shadow-lg hover:shadow-xl"
                 onClick={() => trackPhoneClick("hero_section")}
               >

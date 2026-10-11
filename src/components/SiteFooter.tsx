@@ -10,7 +10,15 @@ export const SiteFooter = () => {
           {/* Column 1 - About */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <img src="/Logo.png" alt="Balaji TV Experts" className="h-8 w-auto" />
+              <a
+                href="/"
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.location.href = "/";
+                }}
+              >
+                <img src="/Logo.png" alt="Balaji TV Experts" className="h-8 w-auto" />
+              </a>
             </div>
             <p className="text-sm text-[#9CA3AF] mb-4">
               Independent TV repair service in Hyderabad. Component-level repairs with 90-day warranty.
@@ -22,32 +30,32 @@ export const SiteFooter = () => {
             <h3 className="font-semibold text-white mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <a href="#problems" className="text-sm text-[#9CA3AF] hover:text-white transition-colors">
+                <a href="/#problems" className="text-sm text-[#9CA3AF] hover:text-white transition-colors">
                   TV Problems
                 </a>
               </li>
               <li>
-                <a href="#services" className="text-sm text-[#9CA3AF] hover:text-white transition-colors">
+                <a href="/#services" className="text-sm text-[#9CA3AF] hover:text-white transition-colors">
                   Services
                 </a>
               </li>
               <li>
-                <a href="#brands" className="text-sm text-[#9CA3AF] hover:text-white transition-colors">
+                <a href="/#brands" className="text-sm text-[#9CA3AF] hover:text-white transition-colors">
                   Brands
                 </a>
               </li>
               <li>
-                <a href="#gallery" className="text-sm text-[#9CA3AF] hover:text-white transition-colors">
+                <a href="/#gallery" className="text-sm text-[#9CA3AF] hover:text-white transition-colors">
                   Gallery
                 </a>
               </li>
               <li>
-                <a href="#areas" className="text-sm text-[#9CA3AF] hover:text-white transition-colors">
+                <a href="/#areas" className="text-sm text-[#9CA3AF] hover:text-white transition-colors">
                   Service Areas
                 </a>
               </li>
               <li>
-                <a href="#faq" className="text-sm text-[#9CA3AF] hover:text-white transition-colors">
+                <a href="/#faq" className="text-sm text-[#9CA3AF] hover:text-white transition-colors">
                   FAQ
                 </a>
               </li>
@@ -59,27 +67,27 @@ export const SiteFooter = () => {
             <h3 className="font-semibold text-white mb-4">Services</h3>
             <ul className="space-y-2">
               <li>
-                <a href="#services" className="text-sm text-[#9CA3AF] hover:text-white transition-colors">
+                <a href="/services" className="text-sm text-[#9CA3AF] hover:text-white transition-colors">
                   Screen Replacement
                 </a>
               </li>
               <li>
-                <a href="#services" className="text-sm text-[#9CA3AF] hover:text-white transition-colors">
+                <a href="/services" className="text-sm text-[#9CA3AF] hover:text-white transition-colors">
                   Motherboard Repair
                 </a>
               </li>
               <li>
-                <a href="#services" className="text-sm text-[#9CA3AF] hover:text-white transition-colors">
+                <a href="/services" className="text-sm text-[#9CA3AF] hover:text-white transition-colors">
                   Power Supply Repair
                 </a>
               </li>
               <li>
-                <a href="#services" className="text-sm text-[#9CA3AF] hover:text-white transition-colors">
+                <a href="/services" className="text-sm text-[#9CA3AF] hover:text-white transition-colors">
                   Backlight Repair
                 </a>
               </li>
               <li>
-                <a href="#services" className="text-sm text-[#9CA3AF] hover:text-white transition-colors">
+                <a href="/services" className="text-sm text-[#9CA3AF] hover:text-white transition-colors">
                   Smart TV Troubleshooting
                 </a>
               </li>
@@ -92,7 +100,7 @@ export const SiteFooter = () => {
             <ul className="space-y-3">
               <li className="flex items-center gap-2">
                 <Phone className="h-4 w-4 text-[#FF4A17]" />
-                <a href="tel:+919959152818" className="text-sm text-[#9CA3AF] hover:text-white transition-colors" onClick={() => trackPhoneClick("footer_contact")}>
+                <a href="/call" className="text-sm text-[#9CA3AF] hover:text-white transition-colors" onClick={() => trackPhoneClick("footer_contact")}>
                   +91 9959152818
                 </a>
               </li>
@@ -137,7 +145,7 @@ export const SiteFooter = () => {
               © 2026 Balaji TV Experts. All rights reserved.
             </p>
             <div className="flex gap-6">
-              <a href="/privacy-policy" onClick={(e) => { e.preventDefault(); window.location.href = '/privacy-policy'; }} className="text-sm text-[#9CA3AF] hover:text-white transition-colors">
+              <a href="/privacy-policy" className="text-sm text-[#9CA3AF] hover:text-white transition-colors">
                 Privacy Policy
               </a>
             </div>

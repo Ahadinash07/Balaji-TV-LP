@@ -56,7 +56,7 @@ export const QuoteCTA = () => {
 
             <div className="space-y-3">
               <a
-                href="tel:+919959152818"
+                href="/call"
                 className="flex items-center justify-center gap-2 w-full py-3 bg-[#FF4A17] text-white font-semibold rounded-lg hover:bg-[#F97316] transition-colors"
                 onClick={() => trackPhoneClick("quote_cta")}
               >

@@ -23,7 +23,7 @@ export default function PrivacyPolicy() {
                 This Privacy Policy explains what information we collect, how we use it, how we protect it, and the choices available to you.
               </p>
               <p className="mb-8">
-                By using our website balajitvexpert.in, submitting an enquiry form, contacting us by phone or WhatsApp, or requesting our services, you acknowledge that you have read and understood this Privacy Policy.
+                By using our website www.balajitvexpert.online, submitting an enquiry form, contacting us by phone or WhatsApp, or requesting our services, you acknowledge that you have read and understood this Privacy Policy.
               </p>
             </div>
 

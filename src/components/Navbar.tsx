@@ -4,12 +4,12 @@ import { Menu, X, MessageCircle, Phone } from "lucide-react";
 import { trackPhoneClick, trackWhatsAppClick } from "@/lib/gtm";
 
 const navLinks = [
-  { href: "#problems", label: "TV Problems" },
-  { href: "#services", label: "Services" },
-  { href: "#brands", label: "Brands" },
-  { href: "#gallery", label: "Gallery" },
-  { href: "#areas", label: "Areas" },
-  { href: "#faq", label: "FAQ" },
+  { href: "/#problems", label: "TV Problems" },
+  { href: "/#services", label: "Services" },
+  { href: "/#brands", label: "Brands" },
+  { href: "/#gallery", label: "Gallery" },
+  { href: "/#areas", label: "Areas" },
+  { href: "/#faq", label: "FAQ" },
 ];
 
 export const Navbar = () => {
@@ -21,7 +21,15 @@ export const Navbar = () => {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <div className="flex items-center gap-2">
-            <img src="/Logo.png" alt="Balaji TV Experts" className="h-8 w-auto" />
+            <a
+              href="/"
+              onClick={(e) => {
+                e.preventDefault();
+                window.location.href = "/";
+              }}
+            >
+              <img src="/Logo.png" alt="Balaji TV Experts" className="h-8 w-auto" />
+            </a>
           </div>
 
           {/* Desktop Navigation */}
@@ -29,11 +37,7 @@ export const Navbar = () => {
             {navLinks.map((link) => (
               <a
                 key={link.href}
-                href={`/${link.href}`}
-                onClick={(e) => {
-                  e.preventDefault();
-                  window.location.href = `/${link.href}`;
-                }}
+                href={link.href}
                 className="text-sm font-medium text-[#374151] hover:text-[#1A0F3C] transition-colors"
               >
                 {link.label}
@@ -41,7 +45,7 @@ export const Navbar = () => {
             ))}
             <div className="flex items-center gap-3 ml-4 border-l border-[#E5E7EB] pl-4">
               <a
-                href="tel:+919959152818"
+                href="/call"
                 className="flex items-center gap-1.5 text-sm font-medium text-[#1A0F3C] hover:text-[#FF4A17] transition-colors"
                 onClick={() => trackPhoneClick("navbar_desktop")}
               >
@@ -83,13 +87,9 @@ export const Navbar = () => {
             {navLinks.map((link) => (
               <a
                 key={link.href}
-                href={`/${link.href}`}
+                href={link.href}
                 className="px-2 py-3 text-base font-medium text-[#374151] hover:text-[#1A0F3C] hover:bg-[#F9FAFB] rounded-lg transition-colors"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setIsOpen(false);
-                  window.location.href = `/${link.href}`;
-                }}
+                onClick={() => setIsOpen(false)}
               >
                 {link.label}
               </a>

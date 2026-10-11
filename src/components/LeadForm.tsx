@@ -1,7 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import { CheckCircle } from "lucide-react";
-import { trackFormStart, trackFormSubmit } from "@/lib/gtm";
+import { trackFormStart, trackFormSubmit, trackConversion } from "@/lib/gtm";
 
 export const LeadForm = () => {
   const [formData, setFormData] = useState({
@@ -13,7 +12,6 @@ export const LeadForm = () => {
     consent: false,
     company_website: "", // honeypot
   });
-  const [isSubmitted, setIsSubmitted] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
 
   const issues = [
@@ -84,7 +82,7 @@ export const LeadForm = () => {
         urlEncodedData.append("Issue", formData.issue);
         urlEncodedData.append("Area", formData.area || "Not Specified");
         urlEncodedData.append("Preference", formData.preference);
-        urlEncodedData.append("_subject", "New Lead - Balaji TV Expert (balajitvexpert.in)");
+        urlEncodedData.append("_subject", "New Lead - Balaji TV Expert (www.balajitvexpert.online)");
         urlEncodedData.append("_captcha", "false"); // Disables captcha for seamless submission
         
         const response = await fetch("https://formsubmit.co/ajax/balajitvservises@gmail.com", {
@@ -97,13 +95,18 @@ export const LeadForm = () => {
         });
         
         if (response.ok) {
-          setIsSubmitted(true);
           // Track form submission
           trackFormSubmit({
             issue: formData.issue,
             area: formData.area || "Not Specified",
             formId: "lead_form"
           });
+
+          // Track conversion for ads
+          trackConversion(500);
+
+          // Redirect to thank you page
+          window.location.href = "/thank-you";
         } else {
           throw new Error("Failed to submit form");
         }
@@ -128,22 +131,6 @@ export const LeadForm = () => {
       setErrors(prev => ({ ...prev, [name]: "" }));
     }
   };
-
-  if (isSubmitted) {
-    return (
-      <div className="text-center py-8">
-        <div className="w-16 h-16 rounded-full bg-[#34D399]/20 flex items-center justify-center mx-auto mb-4">
-          <CheckCircle className="h-8 w-8 text-[#34D399]" />
-        </div>
-        <h3 className="text-2xl font-bold text-[#111827] mb-2">
-          Thank You!
-        </h3>
-        <p className="text-[#374151]">
-          We've received your enquiry and will get back to you shortly.
-        </p>
-      </div>
-    );
-  }
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
