@@ -124,9 +124,14 @@ export const SiteFooter = () => {
               </li>
               <li className="flex items-center gap-2">
                 <MapPin className="h-4 w-4 text-[#FF4A17]" />
-                <span className="text-sm text-[#9CA3AF]">
-                  Hyderabad, Telangana, India
-                </span>
+                <a
+                  href="https://maps.app.goo.gl/uQ3Xxj988e97Q1Ve8"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-[#9CA3AF] transition-colors hover:text-white"
+                >
+                  Hyderabad, Telangana, India · Get directions
+                </a>
               </li>
               <li className="flex items-center gap-2">
                 <Clock className="h-4 w-4 text-[#FF4A17]" />

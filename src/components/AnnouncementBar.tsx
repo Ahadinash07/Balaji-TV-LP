@@ -1,6 +1,6 @@
 "use client";
 
-import { MessageCircle, Phone } from "lucide-react";
+import { MapPin, MessageCircle, Phone } from "lucide-react";
 import { trackPhoneClick, trackWhatsAppClick } from "@/lib/gtm";
 import { Facebook, Instagram } from "lucide-react";
 
@@ -19,6 +19,17 @@ export const AnnouncementBar = () => {
         </div>
       </div>
       <div className="flex items-center gap-2">
+        <a
+          href="https://maps.app.goo.gl/uQ3Xxj988e97Q1Ve8"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Open Balaji TV Experts location in Google Maps"
+          className="mr-2 inline-flex items-center gap-1.5 rounded-md px-2 py-1 text-xs font-medium transition-colors hover:bg-white/10 hover:text-[#FDBA74] sm:text-sm"
+        >
+          <MapPin className="h-4 w-4 text-[#FF805B]" />
+          <span className="hidden sm:inline">Get Directions</span>
+          <span className="sm:hidden">Map</span>
+        </a>
         <MessageCircle className="h-4 w-4 text-[#25D366]" />
         <a
           href="/call"

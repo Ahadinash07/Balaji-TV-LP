@@ -2,13 +2,20 @@
 import { useState, useEffect } from "react";
 import { trackFormStart, trackFormSubmit, trackConversion } from "@/lib/gtm";
 
-export const LeadForm = () => {
+type LeadFormProps = {
+  formId?: string;
+  idPrefix?: string;
+};
+
+export const LeadForm = ({
+  formId = "lead_form",
+  idPrefix = "lead",
+}: LeadFormProps) => {
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
     issue: "",
     area: "",
-    preference: "call",
     consent: false,
     company_website: "", // honeypot
   });
@@ -29,8 +36,8 @@ export const LeadForm = () => {
 
   // Track form start when component mounts
   useEffect(() => {
-    trackFormStart("lead_form");
-  }, []);
+    trackFormStart(formId);
+  }, [formId]);
 
   const validateForm = () => {
     const newErrors: Record<string, string> = {};
@@ -81,7 +88,7 @@ export const LeadForm = () => {
         urlEncodedData.append("Phone", formData.phone);
         urlEncodedData.append("Issue", formData.issue);
         urlEncodedData.append("Area", formData.area || "Not Specified");
-        urlEncodedData.append("Preference", formData.preference);
+        urlEncodedData.append("Preference", "Not Specified");
         urlEncodedData.append("_subject", "New Lead - Balaji TV Expert (www.balajitvexpert.online)");
         urlEncodedData.append("_captcha", "false"); // Disables captcha for seamless submission
         
@@ -99,7 +106,7 @@ export const LeadForm = () => {
           trackFormSubmit({
             issue: formData.issue,
             area: formData.area || "Not Specified",
-            formId: "lead_form"
+            formId
           });
 
           // Track conversion for ads
@@ -136,10 +143,10 @@ export const LeadForm = () => {
     <form onSubmit={handleSubmit} className="space-y-4">
       {/* Honeypot field - invisible to humans but visible to bots */}
       <div className="opacity-0 absolute -z-10" aria-hidden="true">
-        <label htmlFor="company_website">Website</label>
+        <label htmlFor={`${idPrefix}-company_website`}>Website</label>
         <input
           type="text"
-          id="company_website"
+          id={`${idPrefix}-company_website`}
           name="company_website"
           value={formData.company_website}
           onChange={handleChange}
@@ -148,60 +155,63 @@ export const LeadForm = () => {
         />
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         <div>
-          <label htmlFor="name" className="block text-sm font-medium text-[#374151] mb-1">
+          <label htmlFor={`${idPrefix}-name`} className="block text-sm font-semibold text-[#374151] mb-1.5">
             Name *
           </label>
           <input
             type="text"
-            id="name"
+            id={`${idPrefix}-name`}
             name="name"
             value={formData.name}
             onChange={handleChange}
-            className="w-full px-4 py-2 border border-[#E5E7EB] rounded-lg focus:ring-2 focus:ring-[#FF4A17] focus:border-transparent outline-none transition-colors"
+            aria-invalid={Boolean(errors.name)}
+            className="w-full rounded-xl border border-[#E5E7EB] bg-[#F9FAFB] px-4 py-3 text-sm text-[#111827] placeholder:text-[#9CA3AF] outline-none transition focus:border-[#FF4A17] focus:bg-white focus:ring-4 focus:ring-[#FF4A17]/10"
             placeholder="Your name"
             minLength={2}
             maxLength={60}
           />
           {errors.name && (
-            <p className="text-sm text-[#FF4A17] mt-1">{errors.name}</p>
+            <p className="mt-1.5 text-xs text-[#DC2626]">{errors.name}</p>
           )}
         </div>
 
         <div>
-          <label htmlFor="phone" className="block text-sm font-medium text-[#374151] mb-1">
+          <label htmlFor={`${idPrefix}-phone`} className="block text-sm font-semibold text-[#374151] mb-1.5">
             Phone *
           </label>
           <input
             type="tel"
-            id="phone"
+            id={`${idPrefix}-phone`}
             name="phone"
             value={formData.phone}
             onChange={handleChange}
-            className="w-full px-4 py-2 border border-[#E5E7EB] rounded-lg focus:ring-2 focus:ring-[#FF4A17] focus:border-transparent outline-none transition-colors"
+            aria-invalid={Boolean(errors.phone)}
+            className="w-full rounded-xl border border-[#E5E7EB] bg-[#F9FAFB] px-4 py-3 text-sm text-[#111827] placeholder:text-[#9CA3AF] outline-none transition focus:border-[#FF4A17] focus:bg-white focus:ring-4 focus:ring-[#FF4A17]/10"
             placeholder="10-digit mobile number (e.g., 9876543210)"
             maxLength={10}
             pattern="[6-9]\d{9}"
             title="Please enter exactly 10 digits, starting with 6, 7, 8, or 9"
           />
           {errors.phone && (
-            <p className="text-sm text-[#FF4A17] mt-1">{errors.phone}</p>
+            <p className="mt-1.5 text-xs text-[#DC2626]">{errors.phone}</p>
           )}
         </div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         <div>
-          <label htmlFor="issue" className="block text-sm font-medium text-[#374151] mb-1">
+          <label htmlFor={`${idPrefix}-issue`} className="block text-sm font-semibold text-[#374151] mb-1.5">
             TV Issue *
           </label>
           <select
-            id="issue"
+            id={`${idPrefix}-issue`}
             name="issue"
             value={formData.issue}
             onChange={handleChange}
-            className="w-full px-4 py-2 border border-[#E5E7EB] rounded-lg focus:ring-2 focus:ring-[#FF4A17] focus:border-transparent outline-none transition-colors bg-white"
+            aria-invalid={Boolean(errors.issue)}
+            className="w-full rounded-xl border border-[#E5E7EB] bg-[#F9FAFB] px-4 py-3 text-sm text-[#111827] outline-none transition focus:border-[#FF4A17] focus:bg-white focus:ring-4 focus:ring-[#FF4A17]/10"
           >
             <option value="">Select your issue</option>
             {issues.map((issue) => (
@@ -211,20 +221,20 @@ export const LeadForm = () => {
             ))}
           </select>
           {errors.issue && (
-            <p className="text-sm text-[#FF4A17] mt-1">{errors.issue}</p>
+            <p className="mt-1.5 text-xs text-[#DC2626]">{errors.issue}</p>
           )}
         </div>
 
         <div>
-          <label htmlFor="area" className="block text-sm font-medium text-[#374151] mb-1">
+          <label htmlFor={`${idPrefix}-area`} className="block text-sm font-semibold text-[#374151] mb-1.5">
             Area
           </label>
           <select
-            id="area"
+            id={`${idPrefix}-area`}
             name="area"
             value={formData.area}
             onChange={handleChange}
-            className="w-full px-4 py-2 border border-[#E5E7EB] rounded-lg focus:ring-2 focus:ring-[#FF4A17] focus:border-transparent outline-none transition-colors bg-white"
+            className="w-full rounded-xl border border-[#E5E7EB] bg-[#F9FAFB] px-4 py-3 text-sm text-[#111827] outline-none transition focus:border-[#FF4A17] focus:bg-white focus:ring-4 focus:ring-[#FF4A17]/10"
           >
             <option value="">Select area (optional)</option>
             {areas.map((area) => (
@@ -237,57 +247,28 @@ export const LeadForm = () => {
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-[#374151] mb-2">
-          Contact Preference
-        </label>
-        <div className="flex gap-4">
-          <label className="flex items-center gap-2 cursor-pointer">
-            <input
-              type="radio"
-              name="preference"
-              value="call"
-              checked={formData.preference === "call"}
-              onChange={handleChange}
-              className="text-[#FF4A17]"
-            />
-            <span className="text-sm text-[#374151]">Call</span>
-          </label>
-          <label className="flex items-center gap-2 cursor-pointer">
-            <input
-              type="radio"
-              name="preference"
-              value="whatsapp"
-              checked={formData.preference === "whatsapp"}
-              onChange={handleChange}
-              className="text-[#FF4A17]"
-            />
-            <span className="text-sm text-[#374151]">WhatsApp</span>
-          </label>
-        </div>
-      </div>
-
-      <div>
-        <label className="flex items-start gap-2 cursor-pointer">
+        <label className="flex cursor-pointer items-start gap-2.5">
           <input
             type="checkbox"
             name="consent"
             checked={formData.consent}
             onChange={handleChange}
-            className="mt-1 text-[#FF4A17]"
+            aria-invalid={Boolean(errors.consent)}
+            className="mt-0.5 h-4 w-4 shrink-0 accent-[#FF4A17]"
           />
-          <span className="text-sm text-[#374151]">
-            I agree to the privacy policy and lead consent *
+          <span className="text-xs leading-relaxed text-[#6B7280]">
+            I agree to the <a href="/privacy-policy" className="font-medium text-[#FF4A17] underline underline-offset-2 hover:text-[#D93A10]">privacy policy</a> and lead consent *
           </span>
         </label>
         {errors.consent && (
-          <p className="text-sm text-[#FF4A17] mt-1">{errors.consent}</p>
+          <p className="mt-1.5 text-xs text-[#DC2626]">{errors.consent}</p>
         )}
       </div>
 
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full py-3 bg-[#FF4A17] text-white font-semibold rounded-lg hover:bg-[#F97316] transition-colors shadow-lg hover:shadow-xl disabled:opacity-70 disabled:cursor-not-allowed flex justify-center items-center gap-2"
+        className="flex w-full items-center justify-center gap-2 rounded-xl bg-[#FF4A17] py-3.5 font-semibold text-white shadow-lg shadow-[#FF4A17]/20 transition hover:-translate-y-0.5 hover:bg-[#E94112] hover:shadow-xl disabled:cursor-not-allowed disabled:opacity-70"
       >
         {isSubmitting ? (
           <>
