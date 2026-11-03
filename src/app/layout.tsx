@@ -4,6 +4,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Metadata } from "next";
 import Script from "next/script";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.balajitvexpert.online"),
@@ -69,6 +70,7 @@ export default function RootLayout({
           <Toaster />
           <Sonner />
         </TooltipProvider>
+        <Analytics />
       </body>
     </html>
   );
